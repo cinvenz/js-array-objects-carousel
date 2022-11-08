@@ -60,23 +60,26 @@ body {
 	object-position: center;
 }
 
-.active {
-	display: block;
+.slider-img.active {
+    display: block;
 }
 
 .hidden {
 	visibility: hidden;
 }
 
-.img-carosello {
-    width: 200px;
-    height: 80px;
-}
 
 .carosello {
     position: relative;
     height: 400px;
-    background-color: black;
+    /* background-color: black; */
+}
+
+.img-carosello {
+    position: relative;
+	display: flex;
+	height: 20%;
+    flex-direction: column;
 }
 
 .slider-carosello {
@@ -84,7 +87,12 @@ body {
     min-width: 0;
 	height: 100%;
     display: block;
-    opacity: 0.4;
+    filter: brightness(.4);
+}
+
+.slider-carosello.active {
+    border: 5px solid white;
+	filter: brightness(1);
 }
 
 .controls-carosello {
@@ -121,11 +129,3 @@ body {
     opacity: 1;
 }
 
-/* .thumb-img {
-	flex: 1 0 0;
-	min-width: 0;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
-	filter: brightness(.4);
-} */
