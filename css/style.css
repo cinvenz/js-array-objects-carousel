@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+}
+
+.slider {
+	position: relative;
+	height: 80%;
+	width: 60%;
+	max-width: 800px;
+	max-height: 400px;
+	background-color: salmon;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+}
+
+.btn-left, .btn-right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: .5rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 100%;
+	background-color: white;
+}
+
+.btn-left:hover, .btn-right:hover {
+	background-color: lightblue;
+	cursor: pointer;
+}
+
+.slider-img {
+	position: absolute;
+	inset: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.active {
+	display: block;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.img-carosello {
+    width: 200px;
+    height: 80px;
+}
+
+.carosello {
+    position: relative;
+    height: 400px;
+    background-color: black;
+}
+
+.slider-carosello {
+    object-fit: cover;
+    min-width: 0;
+	height: 100%;
+    display: block;
+    opacity: 0.4;
+}
+
+.controls-carosello {
+    display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	inset: 0;
+}
+
+
+.btn-top, .btn-bottom {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: .5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 100%;
+	background-color: white;
+}
+
+.btn-top:hover, .btn-bottom:hover {
+	background-color: lightblue;
+	cursor: pointer;
+}
+
+.opacity-scuro {
+    opacity: 0.4;
+}
+
+.opacity-chiaro{
+    opacity: 1;
+}
+
+/* .thumb-img {
+	flex: 1 0 0;
+	min-width: 0;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	filter: brightness(.4);
+} */
