@@ -122,6 +122,9 @@ eleBtnLeft.addEventListener('click', function () {
 	// togliere la classe active dall'elemento attivo corrente
 	listEleImg[activeIndex].classList.remove('active');
 	listThumbs[activeIndex].classList.remove('active');
+	listTitle[activeIndex].classList.remove('active');
+	listText[activeIndex].classList.remove('active');
+
 
 	// decrementare l'active index con reset per slider infinito
 	/*
@@ -140,6 +143,19 @@ eleBtnLeft.addEventListener('click', function () {
 	// aggiungere la classe active all'elemento successivo
 	listEleImg[activeIndex].classList.add('active');
 	listThumbs[activeIndex].classList.add('active');
+	listTitle[activeIndex].classList.add('active');
+	listText[activeIndex].classList.add('active');
 	document.body.style.backgroundImage = `url('${arrImages[activeIndex].image}')`;
 	document.body.style.backgroundSize = 'cover';
 });
+
+const idInterval = setInterval(count, 3000);
+function count() {
+	if (counter === 0) {
+		console.log('Buon anno!');
+		clearInterval(idInterval);
+	} else {
+		console.log(counter);
+		counter--;
+	}
+}
