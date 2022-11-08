@@ -129,3 +129,29 @@ body {
     opacity: 1;
 }
 
+.title {
+	position: absolute;
+	z-index: 999;
+	display: none;
+	color: white;
+	right: 2rem;
+	bottom: 5rem;
+}
+
+.title.active {
+	display: block;
+}
+
+.text {
+	position: absolute;
+	z-index: 999;
+	display: none;
+	color: white;
+	right: 2rem;
+	bottom: 3rem;
+	text-align: right;
+}
+
+.text.active {
+	display: block;
+}
