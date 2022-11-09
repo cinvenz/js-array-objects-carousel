@@ -28,8 +28,10 @@ const arrImages =  [
 
 const eleSliderViewer = document.querySelector('.slider');
 const eleSliderThumbs = document.querySelector('.img-carosello');
-const eleBtnLeft = document.querySelector('.btn-top');
-const eleBtnRight = document.querySelector('.btn-bottom');
+const eleBtnTop = document.querySelector('.btn-top');
+const eleBtnBottom = document.querySelector('.btn-bottom');
+const eleBtnInvert = document.querySelector('.btn-invert');
+const eleBtnStop = document.querySelector('.btn-stop')
 
 // creare i tag immagine nell'html
 for (let i = 0; i < arrImages.length; i++) {
@@ -85,7 +87,7 @@ document.body.style.backgroundImage = `url('${arrImages[activeIndex].image}')`;
 document.body.style.backgroundSize = 'cover';
 
 // aggiungere gli event listeners ai due bottoni
-eleBtnRight.addEventListener('click', function () {
+eleBtnBottom.addEventListener('click', function () {
 	// togliere la classe active dall'elemento attivo corrente
 	listTitle[activeIndex].classList.remove('active')
 	listEleImg[activeIndex].classList.remove('active');
@@ -118,7 +120,7 @@ eleBtnRight.addEventListener('click', function () {
 	document.body.style.backgroundSize = 'cover';
 });
 
-eleBtnLeft.addEventListener('click', function () {
+eleBtnTop.addEventListener('click', function () {
 	// togliere la classe active dall'elemento attivo corrente
 	listEleImg[activeIndex].classList.remove('active');
 	listThumbs[activeIndex].classList.remove('active');
@@ -149,13 +151,53 @@ eleBtnLeft.addEventListener('click', function () {
 	document.body.style.backgroundSize = 'cover';
 });
 
-const idInterval = setInterval(count, 3000);
+let autoPlay = setInterval(count, 3000);
 function count() {
-	if (counter === 0) {
-		console.log('Buon anno!');
-		clearInterval(idInterval);
-	} else {
-		console.log(counter);
-		counter--;
+	listEleImg[activeIndex].classList.remove('active');
+	listThumbs[activeIndex].classList.remove('active');
+	listTitle[activeIndex].classList.remove('active');
+	listText[activeIndex].classList.remove('active');
+
+	activeIndex++;
+	if (activeIndex === listEleImg.length) {
+		activeIndex = 0;
 	}
+
+	// aggiungere la classe active all'elemento successivo
+	listEleImg[activeIndex].classList.add('active');
+	listThumbs[activeIndex].classList.add('active');
+	listTitle[activeIndex].classList.add('active');
+	listText[activeIndex].classList.add('active');
 }
+
+
+
+eleBtnInvert.addEventListener('click', function () {
+	clearInterval(autoPlay);
+	this
+	autoPlay = setInterval(count, 3000);
+	function count() {
+	listEleImg[activeIndex].classList.remove('active');
+	listThumbs[activeIndex].classList.remove('active');
+	listTitle[activeIndex].classList.remove('active');
+	listText[activeIndex].classList.remove('active');
+
+	if (activeIndex === 0) {
+		activeIndex = listEleImg.length;
+	}
+	activeIndex--;
+
+	// aggiungere la classe active all'elemento successivo
+	listEleImg[activeIndex].classList.add('active');
+	listThumbs[activeIndex].classList.add('active');
+	listTitle[activeIndex].classList.add('active');
+	listText[activeIndex].classList.add('active');
+	document.body.style.backgroundImage = `url('${arrImages[activeIndex].image}')`;
+	document.body.style.backgroundSize = 'cover';
+}
+});
+
+eleBtnStop.addEventListener('click', function () {
+	clearInterval(autoPlay);
+	
+});

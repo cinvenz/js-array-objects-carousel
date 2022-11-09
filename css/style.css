@@ -155,3 +155,9 @@ body {
 .text.active {
 	display: block;
 }
+
+.btn-invert {
+	position: absolute;
+	bottom: 2rem;
+	left: 30rem;
+}
