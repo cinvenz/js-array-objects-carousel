@@ -160,4 +160,20 @@ body {
 	position: absolute;
 	bottom: 2rem;
 	left: 30rem;
+	padding: .5rem .5rem;
+	background-color: orangered;
+	font-weight: bold;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+.btn-stop {
+	position: absolute;
+	bottom: 2rem;
+	right: 30rem;
+	padding: .5rem .5rem;
+	background-color: orangered;
+	font-weight: bold;
+	border-radius: 30px;
+	cursor: pointer;
 }
